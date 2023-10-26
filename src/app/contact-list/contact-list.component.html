@@ -1,0 +1,33 @@
+  
+  <div class="contactList">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">ID#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Email Address</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">View</th>
+              <th scope="col">Action</th>
+              
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr *ngFor="let data of contact" class="Identifier">
+                <td> {{ data.id }}</td>
+                <td>{{ data. name }}</td>
+                <td> {{ data.email}}</td>
+                <td> {{ data.contact }}</td>
+                <button [routerLink]="'/view/' + data.id">View</button>
+                <td>
+                 
+                  <button class="edit-btn" (click)="onEditContact(data.id)">Edit</button>
+                  <button (click)="onDeleteContact(data.id)" class="delete-btn">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+
+  

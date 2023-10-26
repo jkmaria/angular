@@ -1,0 +1,32 @@
+<h2>Contact Management</h2>
+
+<form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+
+    <div class="mb-3">
+      <label for="infoName" class="form-label">Name:</label>
+      <input id="infoName" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Your name" formControlName="name" ngModel>
+    </div>
+        <div>
+        <small *ngIf="isrequired('name')">Name is required</small>
+        </div>
+
+    <div class="mb-3">
+      <label for="infoEmail" class="form-label">Email Address:</label>
+      <input id="infoEmail" type="email" class="form-control" placeholder="Enter Email Address" formControlName="email" ngModel>
+        <div>
+        <small *ngIf="isrequired('email')">Email Address is required</small>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="infoContact" class="form-label">Phone Number:</label>
+        <input id="infoContact" type="text" class="form-control" placeholder="Enter phone number" formControlName="contact" ngModel>
+        <div>
+            <small *ngIf="isrequired('email')">Phone number is required</small>
+        </div>
+      </div>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </form>
+  <br>
+  <br>
+  <br>

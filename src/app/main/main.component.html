@@ -1,0 +1,12 @@
+<app-form (onSubmitEvent)="handleSubmit($event)" [fetchonedit]="editItem"></app-form>
+
+<app-contact-list
+   
+    [contact]="myContacts"
+    (onDeleteEvent)="handleDelete($event)"
+    (onEditInformation)="handleEdit($event)">
+</app-contact-list>
+
+
+
+
